@@ -49,7 +49,7 @@ const server=http.createServer(async(req,res)=>{const p=url.parse(req.url,true).
       res.writeHead(200,{'content-type':types[ext]||'application/octet-stream','cache-control':ext==='.html'?'no-cache':'public,max-age=3600'});return res.end(fs.readFileSync(file));
     }
   }
-  if(req.method==='GET'&&p==='/api/health')return json(res,200,{ok:true,service:'New Pratap Tools Commerce API',version:'25.0.0',time:new Date().toISOString()});
+  if(req.method==='GET'&&p==='/api/health')return json(res,200,{ok:true,service:'New Pratap Tools Commerce API',version:'30.0.0',time:new Date().toISOString()});
   if(req.method==='POST'&&p==='/api/admin/login'){const b=await body(req),email=process.env.ADMIN_EMAIL||'admin@newprataptools.in',pass=process.env.ADMIN_PASSWORD||(process.env.NODE_ENV==='production'?'change-me':'admin123');if(b.email!==email||b.password!==pass)return json(res,401,{ok:false,error:'Invalid admin credentials'});return json(res,200,{ok:true,token:adminToken()});}
   if(req.method==='POST'&&p==='/api/integrations/unlock'){if(!adminAuth(req))return json(res,401,{ok:false,error:'Admin authentication required'});const b=await body(req);if(String(b.password||'')!==String(INTEGRATION_PANEL_PASSWORD))return json(res,403,{ok:false,error:'Invalid integration panel password'});const token=crypto.createHash('sha256').update(`${INTEGRATION_PANEL_PASSWORD}:${adminToken()}`).digest('hex');return json(res,200,{ok:true,token});}
   if(req.method==='GET'&&p==='/api/integrations/status')return json(res,200,status());
