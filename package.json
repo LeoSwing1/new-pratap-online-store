@@ -1,0 +1,12 @@
+{
+  "name": "new-pratap-tools-ecommerce-v30",
+  "version": "30.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node server.js",
+    "health": "node healthcheck.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
