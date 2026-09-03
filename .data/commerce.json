@@ -2091,23 +2091,17 @@
   ],
   "orders": [
     {
-      "id": "NPT-20260903-46302",
-      "customerId": "kevinleoswing@gmail.com",
+      "id": "NPT-20260903-95927",
+      "customerId": "8840751012",
       "customer": {
-        "name": "Leo",
+        "name": "leo",
         "mobile": "8840751012",
-        "email": "kevinleoswing@gmail.com",
-        "address": "21/46",
+        "email": "",
+        "address": "21/46`",
         "city": "lko",
         "pincode": "226028"
       },
       "items": [
-        {
-          "id": "bosch-gbh-2-26",
-          "name": "GBH 2-26 Rotary Hammer",
-          "qty": 1,
-          "price": 6999
-        },
         {
           "id": "bosch-gws-600",
           "name": "GWS 600 Angle Grinder 670W",
@@ -2119,109 +2113,59 @@
           "name": "GA4530 Angle Grinder 720W",
           "qty": 1,
           "price": 3199
+        },
+        {
+          "id": "bosch-gbh-2-26",
+          "name": "GBH 2-26 Rotary Hammer",
+          "qty": 1,
+          "price": 6999
         }
       ],
       "total": 13097,
       "payment": "Cash on Delivery",
-      "paymentStatus": "Paid",
-      "status": "Delivered",
-      "courier": "Shiprocket",
-      "awb": "8840751012",
-      "created": "2026-09-03T19:49:06.302Z",
-      "trackingUrl": "TEST.COM"
+      "paymentStatus": "Pending — COD",
+      "status": "Order Placed",
+      "courier": "Pending",
+      "awb": "",
+      "created": "2026-09-03T20:38:15.927Z"
     }
   ],
   "customers": [
     {
-      "name": "Leo",
+      "name": "leo",
       "mobile": "8840751012",
-      "email": "kevinleoswing@gmail.com",
-      "created": "2026-09-03T19:47:56.364Z",
-      "address": "21/46",
+      "email": "",
+      "created": "2026-09-03T20:36:56.955Z",
+      "address": "21/46`",
       "city": "lko",
       "pincode": "226028"
     }
   ],
   "notifications": [
     {
-      "id": "n-update-NPT-20260903-46302-1788465047505",
+      "id": "n-customer-NPT-20260903-95927",
+      "key": "customer-order:NPT-20260903-95927",
       "type": "order",
       "audience": "customer",
       "customerRef": "8840751012",
-      "orderId": "NPT-20260903-46302",
-      "title": "Order update · NPT-20260903-46302",
-      "text": "Your order status is now Delivered.",
-      "read": false,
-      "date": "2026-09-03T19:50:47.505Z"
-    },
-    {
-      "id": "n-update-NPT-20260903-46302-1788465026281",
-      "type": "order",
-      "audience": "customer",
-      "customerRef": "8840751012",
-      "orderId": "NPT-20260903-46302",
-      "title": "Order update · NPT-20260903-46302",
-      "text": "Your order status is now Out for Delivery.",
-      "read": false,
-      "date": "2026-09-03T19:50:26.281Z"
-    },
-    {
-      "id": "n-update-NPT-20260903-46302-1788465013224",
-      "type": "order",
-      "audience": "customer",
-      "customerRef": "8840751012",
-      "orderId": "NPT-20260903-46302",
-      "title": "Order update · NPT-20260903-46302",
-      "text": "Your order status is now Shipped.",
-      "read": false,
-      "date": "2026-09-03T19:50:13.224Z"
-    },
-    {
-      "id": "n-update-NPT-20260903-46302-1788464985191",
-      "type": "order",
-      "audience": "customer",
-      "customerRef": "8840751012",
-      "orderId": "NPT-20260903-46302",
-      "title": "Order update · NPT-20260903-46302",
-      "text": "Your order status is now Ready for Pickup.",
-      "read": false,
-      "date": "2026-09-03T19:49:45.191Z"
-    },
-    {
-      "id": "n-update-NPT-20260903-46302-1788464973902",
-      "type": "order",
-      "audience": "customer",
-      "customerRef": "8840751012",
-      "orderId": "NPT-20260903-46302",
-      "title": "Order update · NPT-20260903-46302",
-      "text": "Your order status is now Processing.",
-      "read": false,
-      "date": "2026-09-03T19:49:33.902Z"
-    },
-    {
-      "id": "n-customer-NPT-20260903-46302",
-      "key": "customer-order:NPT-20260903-46302",
-      "type": "order",
-      "audience": "customer",
-      "customerRef": "8840751012",
-      "orderId": "NPT-20260903-46302",
-      "title": "Order placed · NPT-20260903-46302",
+      "orderId": "NPT-20260903-95927",
+      "title": "Order placed · NPT-20260903-95927",
       "text": "Your order has been placed. We will notify you as it moves through processing and dispatch.",
       "read": false,
-      "date": "2026-09-03T19:49:06.308Z"
+      "date": "2026-09-03T20:38:15.936Z"
     },
     {
-      "id": "n-admin-NPT-20260903-46302",
-      "key": "order:NPT-20260903-46302",
+      "id": "n-admin-NPT-20260903-95927",
+      "key": "order:NPT-20260903-95927",
       "type": "order",
       "audience": "admin",
-      "title": "New order NPT-20260903-46302",
-      "text": "Leo placed an order using Cash on Delivery.",
+      "title": "New order NPT-20260903-95927",
+      "text": "leo placed an order using Cash on Delivery.",
       "read": false,
-      "date": "2026-09-03T19:49:06.307Z",
-      "orderId": "NPT-20260903-46302"
+      "date": "2026-09-03T20:38:15.936Z",
+      "orderId": "NPT-20260903-95927"
     }
   ],
   "banners": [],
-  "updatedAt": "2026-09-03T19:50:47.505Z"
+  "updatedAt": "2026-09-03T20:38:15.936Z"
 }

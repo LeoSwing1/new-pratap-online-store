@@ -22,3 +22,5 @@ services:
         value: "270303"
       - key: ALLOWED_ORIGIN
         sync: false
+      - key: OTP_DEMO_MODE
+        value: "true"

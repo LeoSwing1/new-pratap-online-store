@@ -36,3 +36,11 @@ Server binds to `0.0.0.0` and uses `process.env.PORT`.
 
 ### Production note
 The JSON store is centralized for demo/staging. For permanent production persistence, connect the prepared Supabase/PostgreSQL integration and configure a persistent database.
+
+
+## V31 Notifications & OTP
+- Customer notification center is available from the header bell and mobile Alerts tab.
+- Browser push uses Firebase Cloud Messaging when configured.
+- Mobile/email OTP authentication is server-verified.
+- Admin can send general, offer, or order notifications to all or selected customers.
+- Configure Email, SMS, and Browser Push under Admin → Integrations.
