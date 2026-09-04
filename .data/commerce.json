@@ -1,0 +1,132 @@
+{
+  "products": [
+    {
+      "id": "p-1788512608762",
+      "name": "test",
+      "brand": "Bosch",
+      "category": "Power Tools",
+      "sku": "NPT-591604",
+      "price": 100,
+      "mrp": 108,
+      "stock": 1,
+      "power": "",
+      "model": "",
+      "manufacturer": "Bosch",
+      "countryOfOrigin": "India",
+      "seller": {
+        "name": "New Pratap Tools & Abrasives",
+        "rating": 4.7,
+        "location": "Ghaziabad, Uttar Pradesh",
+        "gstVerified": true
+      },
+      "purchaseCount": 231,
+      "image": "",
+      "demoUrl": "",
+      "description": "",
+      "badge": "New",
+      "rating": 4.5,
+      "reviewCount": 0,
+      "qualityRating": 4.3,
+      "usabilityRating": 4.2,
+      "reviews": [],
+      "features": [],
+      "specifications": {
+        "Brand": "Bosch",
+        "Power Input": "N/A"
+      }
+    }
+  ],
+  "orders": [
+    {
+      "id": "NPT-20260904-40838",
+      "customerId": "8840751012",
+      "customer": {
+        "name": "Leo",
+        "mobile": "8840751012",
+        "email": "",
+        "address": "21/46",
+        "city": "Ghaziabad",
+        "pincode": "226028"
+      },
+      "items": [
+        {
+          "id": "p-1788512608762",
+          "name": "test",
+          "qty": 7,
+          "price": 100
+        }
+      ],
+      "total": 700,
+      "payment": "Cash on Delivery",
+      "paymentStatus": "Paid",
+      "status": "Processing",
+      "courier": "Shiprocket",
+      "awb": "",
+      "created": "2026-09-04T09:04:00.838Z",
+      "trackingUrl": ""
+    }
+  ],
+  "customers": [
+    {
+      "id": "c-1788503855882",
+      "name": "Leo",
+      "mobile": "8840751012",
+      "email": "",
+      "created": "2026-09-04T09:04:00.838Z",
+      "pushTokens": [],
+      "address": "21/46",
+      "city": "Ghaziabad",
+      "pincode": "226028"
+    }
+  ],
+  "notifications": [
+    {
+      "id": "n-adminsend-1788512775258-bjztl",
+      "type": "general",
+      "audience": "customer",
+      "customerRef": "8840751012",
+      "title": "test",
+      "text": "test",
+      "read": false,
+      "date": "2026-09-04T09:06:15.258Z",
+      "url": "/",
+      "offerCode": "1000"
+    },
+    {
+      "id": "n-update-NPT-20260904-40838-1788512657972",
+      "type": "order",
+      "audience": "customer",
+      "customerRef": "8840751012",
+      "orderId": "NPT-20260904-40838",
+      "title": "Order update · NPT-20260904-40838",
+      "text": "Your order status is now Processing.",
+      "read": false,
+      "date": "2026-09-04T09:04:17.972Z"
+    },
+    {
+      "id": "n-customer-NPT-20260904-40838",
+      "key": "customer-order:NPT-20260904-40838",
+      "type": "order",
+      "audience": "customer",
+      "customerRef": "8840751012",
+      "orderId": "NPT-20260904-40838",
+      "title": "Order placed · NPT-20260904-40838",
+      "text": "Your order has been placed. We will notify you as it moves through processing and dispatch.",
+      "read": false,
+      "date": "2026-09-04T09:04:00.844Z"
+    },
+    {
+      "id": "n-admin-NPT-20260904-40838",
+      "key": "order:NPT-20260904-40838",
+      "type": "order",
+      "audience": "admin",
+      "title": "New order NPT-20260904-40838",
+      "text": "Leo placed an order using Cash on Delivery.",
+      "read": false,
+      "date": "2026-09-04T09:04:00.844Z",
+      "orderId": "NPT-20260904-40838"
+    }
+  ],
+  "banners": [],
+  "updatedAt": "2026-09-04T09:06:15.258Z"
+}

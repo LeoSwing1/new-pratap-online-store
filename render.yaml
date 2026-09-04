@@ -1,0 +1,26 @@
+services:
+  - type: web
+    name: new-pratap-online-store
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/health
+    autoDeployTrigger: commit
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: ADMIN_EMAIL
+        value: admin@newprataptools.in
+      - key: ADMIN_PASSWORD
+        value: admin123
+      - key: ADMIN_API_TOKEN
+        generateValue: true
+      - key: NPT_MASTER_KEY
+        generateValue: true
+      - key: INTEGRATION_PANEL_PASSWORD
+        value: "270303"
+      - key: ALLOWED_ORIGIN
+        sync: false
+      - key: OTP_DEMO_MODE
+        value: "true"

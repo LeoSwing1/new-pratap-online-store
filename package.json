@@ -1,0 +1,14 @@
+{
+  "name": "new-pratap-tools-ecommerce-v35",
+  "version": "35.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node server.js",
+    "health": "node healthcheck.js",
+    "check": "node --check server.js && node --check integrations/provider-adapters.js && node --check integrations/production-adapters.js && node --check integrations/registry.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "description": "New Pratap Tools Commerce OS \u2014 production-ready V35 integration platform"
+}
