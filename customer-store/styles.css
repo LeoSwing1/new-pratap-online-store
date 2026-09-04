@@ -577,3 +577,174 @@ body:has(#authModal) .chatbot {
     padding: 18px 20px;
   }
 }
+
+
+/* =========================================================
+   V38 — POLISHED MOBILE NAVIGATION
+   Five-item floating dock: Home / Search / Shop / Cart / Profile
+   ========================================================= */
+@media (max-width: 760px) {
+  body {
+    padding-bottom: calc(88px + env(safe-area-inset-bottom));
+  }
+
+  .mobile-nav {
+    position: fixed;
+    left: 50%;
+    bottom: max(8px, env(safe-area-inset-bottom));
+    transform: translateX(-50%);
+    z-index: 900;
+    width: min(94vw, 520px);
+    height: 70px;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    align-items: end;
+    gap: 2px;
+    padding: 7px 8px;
+    box-sizing: border-box;
+    border: 1px solid rgba(210,219,229,.95);
+    border-radius: 24px;
+    background: rgba(255,255,255,.97);
+    box-shadow: 0 18px 45px rgba(15,23,42,.18);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+
+  .mobile-nav button {
+    position: relative;
+    min-width: 0;
+    height: 56px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    padding: 4px 2px;
+    border: 0;
+    background: transparent;
+    color: #53657a;
+    border-radius: 17px;
+    box-sizing: border-box;
+  }
+
+  .mobile-nav button .nav-svg {
+    width: 22px;
+    height: 22px;
+    flex: 0 0 22px;
+  }
+
+  .mobile-nav button small {
+    display: block;
+    max-width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 9px;
+    line-height: 1;
+    font-weight: 800;
+  }
+
+  .mobile-nav button.active:not(.nav-shop-center) {
+    color: #0b3154;
+    background: #f7f9fb;
+  }
+
+  .mobile-nav .nav-shop-center {
+    width: 58px;
+    height: 58px;
+    justify-self: center;
+    align-self: start;
+    margin-top: -28px;
+    border-radius: 50%;
+    color: #fff;
+    background: #0b3154;
+    border: 5px solid #fff;
+    box-shadow: 0 10px 24px rgba(11,49,84,.28);
+    gap: 1px;
+  }
+
+  .mobile-nav .nav-shop-center .nav-svg {
+    color: #fff;
+  }
+
+  .mobile-nav .nav-shop-center small {
+    position: absolute;
+    top: 62px;
+    color: #0b3154;
+    font-size: 9px;
+  }
+
+  .mobile-nav .search-i:before {
+    content:"";
+    position:absolute;
+    left:4px; top:3px;
+    width:12px; height:12px;
+    border:1.8px solid currentColor;
+    border-radius:50%;
+  }
+  .mobile-nav .search-i:after {
+    content:"";
+    position:absolute;
+    left:16px; top:16px;
+    width:7px; height:1.8px;
+    background:currentColor;
+    border-radius:2px;
+    transform:rotate(45deg);
+    transform-origin:left center;
+  }
+
+  /* Keep the auth card above the dock and fully usable on phones. */
+  body:has(#authModal) .mobile-nav {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+}
+
+@media (max-width: 390px) {
+  .mobile-nav {
+    width: calc(100vw - 12px);
+    bottom: max(6px, env(safe-area-inset-bottom));
+    height: 67px;
+    border-radius: 22px;
+  }
+  .mobile-nav button {
+    height: 53px;
+  }
+  .mobile-nav .nav-shop-center {
+    width: 54px;
+    height: 54px;
+    margin-top: -25px;
+  }
+  .mobile-nav .nav-shop-center small {
+    top: 58px;
+  }
+}
+
+/* Auth modal: no viewport resize; card owns its scroll. */
+#authModal.modal {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100dvh;
+  padding: max(10px, env(safe-area-inset-top)) 10px max(10px, env(safe-area-inset-bottom));
+  box-sizing: border-box;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#authModal .auth-card {
+  width: min(500px, calc(100vw - 20px));
+  max-height: calc(100dvh - 20px);
+  min-height: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  box-sizing: border-box;
+}
+@media (max-height: 650px) {
+  #authModal .auth-card {
+    max-height: calc(100dvh - 14px);
+  }
+}

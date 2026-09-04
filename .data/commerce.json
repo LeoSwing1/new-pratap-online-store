@@ -68,15 +68,17 @@
   ],
   "customers": [
     {
-      "id": "c-1788503855882",
-      "name": "Leo",
+      "id": "CUS-1788539088923",
+      "name": "Customer",
       "mobile": "8840751012",
       "email": "",
       "created": "2026-09-04T09:04:00.838Z",
       "pushTokens": [],
       "address": "21/46",
-      "city": "Ghaziabad",
-      "pincode": "226028"
+      "city": "lko",
+      "pincode": "226001",
+      "createdAt": "2026-09-04T16:24:48.923Z",
+      "lastLoginAt": "2026-09-04T16:24:48.923Z"
     }
   ],
   "notifications": [
@@ -128,5 +130,5 @@
     }
   ],
   "banners": [],
-  "updatedAt": "2026-09-04T09:06:15.258Z"
+  "updatedAt": "2026-09-04T16:25:09.992Z"
 }

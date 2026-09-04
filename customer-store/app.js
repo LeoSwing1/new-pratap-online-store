@@ -278,8 +278,24 @@ function mobileSearch(){
 
 function mobileNav(tab){
   document.querySelectorAll('.mobile-nav [data-tab]').forEach(b=>b.classList.toggle('active',b.dataset.tab===tab));
-  if(tab==='home'||tab==='search'||tab==='shop') document.body.classList.remove('profile-mode');
+  const drawer=document.getElementById('drawer');
+  const isDrawerTab=(tab==='cart'||tab==='account');
+  if(!isDrawerTab){
+    closeDrawer();
+    document.body.classList.remove('profile-mode');
+  }
+  if(tab==='account') document.body.classList.add('profile-mode');
   if(navigator.vibrate)try{navigator.vibrate(8)}catch(e){}
+}
+function focusMobileSearch(){
+  closeDrawer();
+  document.body.classList.remove('profile-mode');
+  const input=document.getElementById('searchInput');
+  if(input){
+    input.focus({preventScroll:true});
+    input.scrollIntoView({behavior:'smooth',block:'center'});
+    liveSearch();
+  }
 }
 
 function showCategories(){openDrawer();document.getElementById('drawerTitle').textContent='Categories';document.getElementById('drawerBody').innerHTML=`<div class="side-menu">${NPT.categories.map(c=>`<button onclick="closeDrawer();homeShowAll=false;currentCat='${c}';renderHome();setTimeout(()=>document.getElementById('products')?.scrollIntoView({behavior:'smooth'}),50)">${c}<span>›</span></button>`).join('')}</div>`}
