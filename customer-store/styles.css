@@ -211,3 +211,369 @@ body{background:#f6f8fb;color:var(--ink);overflow-x:hidden}.topbar{position:rela
 .cart-i:before{content:"";position:absolute;left:4px;top:5px;width:14px;height:11px;border:1.8px solid currentColor;border-radius:2px;transform:skew(-7deg)}.cart-i:after{content:"";position:absolute;left:7px;top:18px;width:3px;height:3px;border-radius:50%;background:currentColor;box-shadow:9px 0 0 currentColor}
 .account-i:before{content:"";position:absolute;left:7px;top:3px;width:8px;height:8px;border:1.8px solid currentColor;border-radius:50%}.account-i:after{content:"";position:absolute;left:3px;top:13px;width:16px;height:8px;border:1.8px solid currentColor;border-radius:9px 9px 4px 4px}
 @media(max-width:760px){.mobile-nav{grid-template-columns:repeat(6,1fr);height:78px;padding:6px 8px max(6px,env(safe-area-inset-bottom));gap:2px}.mobile-nav button{height:60px;border-radius:15px}.mobile-nav button span.nav-icon-wrap{width:36px;height:29px;display:grid;place-items:center;background:transparent}.mobile-nav button.active span.nav-svg{color:#0b3154}.mobile-nav button.active span.nav-icon-wrap{background:#fff4bf;border-radius:11px}.mobile-nav small{font-size:9px;letter-spacing:.15px}}
+/* =========================================================
+   RESPONSIVE LOGIN / AUTH MODAL
+   New Pratap Tools Commerce OS
+   ========================================================= */
+
+#login {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 100%;
+  height: 100dvh;
+
+  padding: 24px;
+  box-sizing: border-box;
+
+  overflow: hidden;
+}
+
+#login > div {
+  box-sizing: border-box;
+}
+
+/* Main login card */
+#login .login-card,
+#login .auth-card,
+#login .modal-card {
+  width: min(560px, calc(100vw - 48px));
+  max-width: 560px;
+
+  max-height: calc(100dvh - 48px);
+
+  margin: 0 auto;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  box-sizing: border-box;
+
+  border-radius: 24px;
+}
+
+/* If your login card does not have a specific class,
+   this catches the direct modal content */
+#login > div > div {
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+
+/* =========================================================
+   SMALL LAPTOP / TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  #login {
+    padding: 20px;
+  }
+
+  #login .login-card,
+  #login .auth-card,
+  #login .modal-card {
+    width: min(520px, calc(100vw - 40px));
+    max-height: calc(100dvh - 40px);
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  #login {
+    align-items: center;
+    justify-content: center;
+
+    padding: 12px;
+  }
+
+  #login .login-card,
+  #login .auth-card,
+  #login .modal-card {
+    width: calc(100vw - 24px);
+    max-width: none;
+
+    max-height: calc(100dvh - 24px);
+
+    border-radius: 20px;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 390px) {
+
+  #login {
+    padding: 8px;
+  }
+
+  #login .login-card,
+  #login .auth-card,
+  #login .modal-card {
+    width: calc(100vw - 16px);
+    max-height: calc(100dvh - 16px);
+
+    border-radius: 18px;
+  }
+}
+
+
+/* =========================================================
+   AUTH CONTENT MUST NOT FORCE THE VIEWPORT TO RESIZE
+   ========================================================= */
+
+#login input,
+#login button,
+#login select,
+#login textarea {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+#login img,
+#login svg {
+  max-width: 100%;
+}
+
+
+/* =========================================================
+   DON'T LET THE BOTTOM NAV INTERFERE WITH LOGIN
+   ========================================================= */
+
+body:has(#login:not([hidden])) .mobile-nav,
+body:has(#login:not([hidden])) .bottom-nav,
+body:has(#login:not([hidden])) #mobileNav,
+body:has(#login:not([hidden])) #mobile-nav {
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   AUTH MODAL SCROLLING
+   ========================================================= */
+
+#login .login-card,
+#login .auth-card,
+#login .modal-card {
+  scrollbar-width: thin;
+  overscroll-behavior: contain;
+}
+
+
+/* =========================================================
+   LANDSCAPE PHONES
+   ========================================================= */
+
+@media (max-height: 600px) and (orientation: landscape) {
+
+  #login {
+    align-items: flex-start;
+    padding: 12px;
+    overflow-y: auto;
+  }
+
+  #login .login-card,
+  #login .auth-card,
+  #login .modal-card {
+    max-height: calc(100dvh - 24px);
+  }
+}
+/* =========================================================
+   V37.1 — REAL AUTH MODAL RESPONSIVE FIX
+   IMPORTANT: the JS creates #authModal, not #login.
+   This block intentionally targets the real DOM IDs/classes.
+   ========================================================= */
+
+/* Lock the page while authentication is open. */
+body:has(#authModal) {
+  overflow: hidden;
+}
+
+/* Full-screen auth layer. Keep the viewport fixed; scroll the card only. */
+#authModal.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(10px, 2.5vw, 28px);
+  overflow: hidden;
+  overscroll-behavior: none;
+}
+
+/* The actual login card generated by showAuth(). */
+#authModal .auth-card {
+  width: min(500px, calc(100vw - 32px));
+  max-width: 500px;
+  max-height: calc(100dvh - 32px);
+  min-height: 0;
+  margin: 0;
+  padding: 28px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  box-sizing: border-box;
+  border-radius: 24px;
+  position: relative;
+}
+
+/* Never allow auth controls to widen the card or the viewport. */
+#authModal .auth-card > *,
+#authModal input,
+#authModal button,
+#authModal select,
+#authModal textarea,
+#authModal img,
+#authModal svg {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+#authModal .form {
+  min-width: 0;
+}
+
+#authModal .form input {
+  display: block;
+  width: 100%;
+  min-width: 0;
+}
+
+#authModal .auth-tabs,
+#authModal .auth-methods,
+#authModal .otp-verify {
+  min-width: 0;
+}
+
+/* Keep the close button visible while the card itself scrolls. */
+#authModal .closex {
+  position: sticky;
+  float: right;
+  z-index: 5;
+  margin-left: auto;
+  top: 0;
+}
+
+/* The page navigation must never sit over the authentication UI. */
+body:has(#authModal) .mobile-nav,
+body:has(#authModal) .bottom-nav,
+body:has(#authModal) #mobileNav,
+body:has(#authModal) #mobile-nav,
+body:has(#authModal) .chatbot {
+  pointer-events: none;
+  z-index: 0 !important;
+}
+
+/* Tablet / small laptop */
+@media (max-width: 900px) {
+  #authModal.modal {
+    padding: 18px;
+  }
+
+  #authModal .auth-card {
+    width: min(500px, calc(100vw - 36px));
+    max-height: calc(100dvh - 36px);
+  }
+}
+
+/* Phones: compact card, internal scroll, never viewport scrolling. */
+@media (max-width: 600px) {
+  #authModal.modal {
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+  }
+
+  #authModal .auth-card {
+    width: calc(100vw - 20px);
+    max-width: none;
+    max-height: calc(100dvh - 20px);
+    padding: 22px 18px;
+    border-radius: 20px;
+  }
+
+  #authModal .auth-card h2 {
+    font-size: clamp(25px, 7vw, 30px);
+    line-height: 1.08;
+  }
+
+  #authModal .auth-tabs button {
+    min-height: 44px;
+  }
+
+  #authModal .auth-method {
+    grid-template-columns: 40px minmax(0, 1fr) auto;
+    gap: 9px;
+    padding: 12px;
+  }
+
+  #authModal .auth-method strong {
+    font-size: 10px;
+  }
+
+  #authModal .otp-verify input {
+    letter-spacing: 6px;
+    font-size: 20px;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 390px) {
+  #authModal.modal {
+    padding: 7px;
+  }
+
+  #authModal .auth-card {
+    width: calc(100vw - 14px);
+    max-height: calc(100dvh - 14px);
+    padding: 19px 15px;
+    border-radius: 18px;
+  }
+
+  #authModal .auth-method {
+    grid-template-columns: 36px minmax(0, 1fr) auto;
+    padding: 10px;
+  }
+
+  #authModal .method-icon {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+/* Landscape phones: start at the top so short screens remain usable. */
+@media (max-height: 600px) and (orientation: landscape) {
+  #authModal.modal {
+    align-items: flex-start;
+    padding: 8px 12px;
+    overflow: hidden;
+  }
+
+  #authModal .auth-card {
+    width: min(500px, calc(100vw - 24px));
+    max-height: calc(100dvh - 16px);
+    border-radius: 18px;
+    padding: 18px 20px;
+  }
+}
