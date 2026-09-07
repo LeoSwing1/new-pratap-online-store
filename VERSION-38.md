@@ -17,3 +17,7 @@ Included:
 - v38 five-item floating mobile navigation
 - Raised central Shop action
 - Drawer/tab state cleanup when switching navigation
+
+
+## Push fix
+The customer notification button now requests permission and immediately registers the FCM token with the backend. Push registration errors are logged instead of being silently swallowed.
